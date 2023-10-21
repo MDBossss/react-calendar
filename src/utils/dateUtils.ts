@@ -7,8 +7,7 @@ interface GenerateMonthOptions {
 }
 
 /**Generates the month grid, as well as other month related data based on the 
- * passed month and year with the ability to select the week start which leaves
- * room for further improvement.
+ * passed month and year with the ability to select which date the week starts on.
   */
 export function generateMonthData({
 	month = getMonth(new Date()),
