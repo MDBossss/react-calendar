@@ -18,6 +18,15 @@ As part of my Junior Frontend Developer (React) task for b2match, I have created
 * Enables users to view additional details upon clicking on an event.
 
 
+## How to Run
+
+Follow these steps to run the project locally:
+
+1. Clone this repository to your local machine
+2. Install the project dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+
 ---
   
 Feel free to explore the application and provide feedback or improvements. Enjoy!
