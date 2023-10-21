@@ -4,7 +4,7 @@ As part of my Junior Frontend Developer (React) task for b2match, I have created
 
 You can view a live demo of this project [here](https://your-demo-url.com).
 
-![Demo Screenshot](showcase.png)
+![Demo Screenshot](public/showcase.png)
 
 
 
