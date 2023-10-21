@@ -1,27 +1,21 @@
-# React + TypeScript + Vite
+# Repository Description:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Calendar Application - Fetch and Display Commits from a [Public API](https://www.openholidaysapi.org/en/api/)
 
-Currently, two official plugins are available:
+# Task Description:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+As part of my Junior Frontend Developer (React) task for b2match, I have created a calendar application that connects to a public API containing time data. The goal of this project is to display fetched events in a calendar view.
 
-## Expanding the ESLint configuration
+# Key Features:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* Allows users to switch between months within the calendar.
+* Displays only the dates within the selected month.
+* Shows relevant data from the API within each day's cell.
+* Aggregates multiple events within a single day, if applicable.
+* Utilizes a DateTime library (date-fns) for handling date-related operations.
 
-- Configure the top-level `parserOptions` property like this:
+* Supports dynamic URL-based navigation for selecting a specific year and month (e.g., /2022/05/01).
+* Enables users to view additional details upon clicking on an event.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  
+Feel free to explore the application and provide feedback or improvements. Enjoy!
