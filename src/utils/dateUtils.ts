@@ -11,12 +11,11 @@ export function generateMonthData({
 	year = getYear(new Date()),
 	weekStartsOn = 1,
 }: GenerateMonthOptions = {}) {
-    const selectedMonthDate = new Date(year,month,1)
+	const selectedMonthDate = new Date(year, month, 1);
 	const monthName = format(selectedMonthDate, "MMMM");
 
 	const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-	// Rotate the array to start from the specified day (weekStartsOn)
 	const weekDayNames = [...dayNames.slice(weekStartsOn), ...dayNames.slice(0, weekStartsOn)];
 
 	let firstDayOfTheMonth = startOfMonth(selectedMonthDate).getDay();
@@ -32,19 +31,28 @@ export function generateMonthData({
 			const currentDay = new Date(year, month, currentMonthCount);
 
 			if (getMonth(currentDay) === month) {
-				return format(currentDay, "yyyy-MM-dd", { weekStartsOn: 1 });
+				return format(currentDay, "yyyy-MM-dd", { weekStartsOn });
 			} else {
 				return null;
 			}
 		});
 	});
-	console.table(monthGrid);
+	// console.table(monthGrid);
 	return {
 		selectedYear: year,
 		selectedMonth: month,
-        selectedMonthDate,
+		selectedMonthDate,
 		weekDayNames,
 		selectedMonthName: monthName,
 		monthGrid,
 	};
+}
+
+export function parseAndValidateMonthNumber(monthNumber: string) {
+	const parsedMonth = parseInt(monthNumber, 10);
+	if (!isNaN(parsedMonth) && parsedMonth >= 1 && parsedMonth <= 12) {
+		return parsedMonth;
+	} else {
+		return getMonth(new Date());
+	}
 }

@@ -1,12 +1,16 @@
-import Calendar from "./components/Calendar"
+import { Navigate, Route, Routes } from "react-router-dom";
+import { format } from "date-fns";
+import Home from "./components/pages/Home";
 
 const App = () => {
+	const todayUrl = format(new Date(), "yyyy/MM/dd");
+  
+	return (
+		<Routes>
+			<Route path="/" element={<Navigate to={todayUrl} />} />
+			<Route path="/:year/:month/:day" element={<Home />} />
+		</Routes>
+	);
+};
 
-  return (
-    <main className="mx-auto max-w-7xl py-20 h-full"> 
-      <Calendar weekStartsOn={1}/>
-    </main>
-  )
-}
-
-export default App
+export default App;
