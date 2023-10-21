@@ -17,6 +17,7 @@ const Calendar = ({ weekStartsOn, month, year, onYearChange, events }: CalendarP
 		generateMonthData({ weekStartsOn, month, year })
 	);
 
+	/**When arrow button are clicked the util function gets called to generate new grid */
 	const handleNavigateMonth = (value: number) => {
 		setCalendarData(
 			generateMonthData({
@@ -27,40 +28,41 @@ const Calendar = ({ weekStartsOn, month, year, onYearChange, events }: CalendarP
 		);
 	};
 
+	//If the year changes trigger the onYearChange event
 	useEffect(() => {
 		onYearChange ? onYearChange(calendarData.selectedYear) : null;
 	}, [calendarData.selectedYear]);
 
 	return (
-		<div className="gap-5 flex flex-col">
-			<div className="flex gap-5 justify-between items-center">
-				<h1 className="font-bold text-2xl text-zinc-800">
+		<div className="flex flex-col gap-5">
+			<div className="flex items-center justify-between gap-5">
+				<h1 className="text-2xl font-bold text-zinc-800">
 					{calendarData.selectedMonthName} {calendarData.selectedYear}
 				</h1>
 				<div className="flex gap-2">
 					<button
-						className="rounded-xl  border-2 border-teal-100 text-teal-600 p-2 hover:scale-105 transition-all hover:shadow-md"
+						className="p-2 text-teal-600 transition-all border-2 border-teal-100 rounded-xl hover:scale-105 hover:shadow-md"
 						onClick={() => handleNavigateMonth(-1)}
 					>
 						<ChevronLeftIcon className="w-6 h-6" />
 					</button>
 					<button
-						className="rounded-xl border-2 border-teal-100 text-teal-600 p-2 hover:scale-105 transition-all hover:shadow-md"
+						className="p-2 text-teal-600 transition-all border-2 border-teal-100 rounded-xl hover:scale-105 hover:shadow-md"
 						onClick={() => handleNavigateMonth(1)}
 					>
 						<ChevronRightIcon className="w-6 h-6" />
 					</button>
 				</div>
 			</div>
-			<div className="flex flex-col rounded-t-xl border border-slate-300">
-				<div className="grid grid-cols-7 grid-rows-1 text-center bg-teal-100 rounded-t-xl text-teal-600 font-bold">
+			<div className="flex flex-col border rounded-t-xl border-slate-300">
+				<div className="grid grid-cols-7 grid-rows-1 font-bold text-center text-teal-600 bg-teal-100 rounded-t-xl">
 					{calendarData.weekDayNames.map((day) => (
-						<div key={day} className="text-xs md:text-base truncate p-5">
+						<div key={day} className="p-5 text-xs truncate md:text-base">
 							{day}
 						</div>
 					))}
 				</div>
-				<div className="flex-1 grid grid-cols-7">
+				<div className="grid flex-1 grid-cols-7">
 					{calendarData.monthGrid.map((week, i) => {
 						const isWeekEmpty = week.every((day) => day === null);
 						return (

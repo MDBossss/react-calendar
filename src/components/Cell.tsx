@@ -10,6 +10,7 @@ interface Props {
 
 const Cell = ({ day, className,events }: Props) => {
 
+	//For days which are not from this month
 	if (!day) {
 		return <div className={cn(className, "border-t border-slate-300 bg-slate-50")}></div>;
 	}

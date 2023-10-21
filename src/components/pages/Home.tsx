@@ -6,11 +6,18 @@ import { fetchEvents } from "../../utils/utils";
 import { useState } from "react";
 
 const Home = () => {
+	//Getting the year and month from the url
 	const { year, month } = useParams();
+
+	//Parsing and validating the values from the url
 	const selectedYear = year ? parseInt(year, 10) : getYear(new Date());
 	const selectedMonth = month ? parseAndValidateMonthNumber(month) : getMonth(new Date());
+
+	//Events which wil be passed to the calendar cells
 	const [events, setEvents] = useState<Record<string, EventType[]>>();
 
+
+	/**Fetches new events for the whole year if the year changes */
 	const handleYearChange = async (year: number) => {
 		await fetchEvents(year)
 			.then((events) => {
@@ -22,7 +29,7 @@ const Home = () => {
 	};
 
 	return (
-		<main className="mx-auto max-w-7xl py-20 h-full">
+		<main className="h-full py-20 mx-auto max-w-7xl">
 			<Calendar
 				weekStartsOn={1}
 				month={selectedMonth - 1}

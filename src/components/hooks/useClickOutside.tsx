@@ -1,5 +1,6 @@
 import { useEffect, RefObject } from "react";
 
+/**Small hook used for closing the event modal */
 const useClickOutside = (ref: RefObject<HTMLElement>, callback: () => void) => {
 	useEffect(() => {
 		const handleClickOutside = (event: Event) => {
