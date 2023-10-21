@@ -34,7 +34,8 @@ export function generateMonthData({
 	firstDayOfTheMonth = (firstDayOfTheMonth - weekStartsOn + 7) % 7;
 
 	/**Initialized with a negative value that is equivalent to the number of days
-	 *  to subtract from the previous month to reach the first day of the current month. */
+	 *  to subtract from the previous month to reach the first day of the current month.
+	 * (how much is missing in the week from the current month) */
 	let currentMonthCount = 0 - firstDayOfTheMonth;
 
 	//Generates a 2d array representing 6 weeks and 7 days per week
