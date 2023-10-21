@@ -1,4 +1,4 @@
-# Task Description:
+## Task Description:
 
 As part of my Junior Frontend Developer (React) task for b2match, I have created a calendar application that connects to a [Public API](https://www.openholidaysapi.org/en/api/) containing time data. The goal of this project is to display fetched events in a calendar view.
 
@@ -8,7 +8,7 @@ You can view a live demo of this project [here](https://your-demo-url.com).
 
 
 
-# Key Features:
+## Key Features:
 
 * Allows users to switch between months within the calendar.
 * Displays only the dates within the selected month.
