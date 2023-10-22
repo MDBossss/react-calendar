@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import Calendar from "../Calendar";
+import Calendar from "../components/Calendar";
 import { getMonth, getYear } from "date-fns";
-import { parseAndValidateMonthNumber } from "../../utils/dateUtils";
-import { fetchEvents } from "../../utils/utils";
+import { parseAndValidateMonthNumber } from "../utils/dateUtils";
+import { fetchEvents } from "../utils/utils";
 import { useState } from "react";
 
 const Home = () => {

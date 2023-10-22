@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { format } from "date-fns";
-import Home from "./components/pages/Home";
+import Home from "./pages/Home";
 
 const App = () => {
 	//Setting todays date as the url as a default value
